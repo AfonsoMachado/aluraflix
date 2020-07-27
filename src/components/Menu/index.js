@@ -1,10 +1,21 @@
 import React from 'react';
+import Logo from '../../assets/img/Logo.png'
+import './Menu.css';
+// import ButtonLink from './ButtonLink';
+import Button from '../Button';
 
 function Menu() {
   return (
-    <header>
-      AluraFlix
-    </header>
+    <nav className="Menu">
+      <a href="/">
+        <img className="Logo" src={Logo} alt="Aluraflix Logo" />
+      </a>
+      {/* Button usando srtled-componentes, se comportando como um a */}
+      <Button as="a" className="ButtonLink" href="/">
+        {/* children */}
+        Novo Vídeo
+      </Button>
+    </nav>
   )
 }
 
