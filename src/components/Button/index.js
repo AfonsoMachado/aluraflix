@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// Props sao injretados automaticamente
+// Props sao injetados automaticamente
 const Button = styled.button`
   color: var(--white);
   border: 1px solid var(--white);

@@ -23,3 +23,10 @@ body {
 a {
   color: inherit;
 }
+
+#root {
+  /* Tirar o padding do topo para manter tudo na tela */
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
