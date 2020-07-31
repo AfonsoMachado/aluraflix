@@ -17,6 +17,7 @@ function CadastroVideo() {
     categoria: 'Front End',
   });
 
+  // Capturandoi categorias do backend
   useEffect(() => {
     categoriasRepository
       .getAll()
@@ -33,7 +34,8 @@ function CadastroVideo() {
         event.preventDefault();
         // alert('Video Cadastrado com sucesso!!!1!');
 
-        const categoriaEscolhida = categorias.find((categoria) => categoria.titulo === values.categoria);
+        const categoriaEscolhida = categorias
+          .find((categoria) => categoria.titulo === values.categoria);
 
         videosRepository.create({
           titulo: values.titulo,
