@@ -32,18 +32,16 @@ function CadastroCategoria() {
   // Função chamada quando quer que algum efeito colateral aconteça quando se usa o componente
   useEffect(() => {
     // console.log('opa');
-    if (window.location.href.includes('localhost')) {
-      const URL = 'https://devflix-afonso.herokuapp.com/categorias';
-      fetch(URL)
-        .then(async (respostaDoServer) => {
-          if (respostaDoServer.ok) {
-            const resposta = await respostaDoServer.json();
-            setCategorias(resposta);
-            return;
-          }
-          throw new Error('Não foi possível pegar os dados');
-        });
-    }
+    const URL = window.location.href.includes('localhost') ? 'http://localhost:3001/categorias' : 'https://devflix-afonso.herokuapp.com/categorias';
+    fetch(URL)
+      .then(async (respostaDoServer) => {
+        if (respostaDoServer.ok) {
+          const resposta = await respostaDoServer.json();
+          setCategorias(resposta);
+          return;
+        }
+        throw new Error('Não foi possível pegar os dados');
+      });
   }, []);
 
   return (
