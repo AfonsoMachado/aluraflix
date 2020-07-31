@@ -33,7 +33,7 @@ function CadastroCategoria() {
   useEffect(() => {
     // console.log('opa');
     if (window.location.href.includes('localhost')) {
-      const URL = 'http://localhost:3001/categorias';
+      const URL = 'https://devflix-afonso.herokuapp.com/categorias';
       fetch(URL)
         .then(async (respostaDoServer) => {
           if (respostaDoServer.ok) {
