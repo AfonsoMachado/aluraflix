@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/userForm';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -11,27 +12,14 @@ function CadastroCategoria() {
     cor: '',
   };
 
+  const { handleChange, values, clearForm } = useForm(valoresIniciais);
+
   const [categorias, setCategorias] = useState([]);
-  // Valor inicial do state
-  // a função setNomeDaCategoria é usada para alterar o valor do state
-  const [values, setValues] = useState(valoresIniciais);
-
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      // chave como valor dinamico
-      // pegando o valor atual dela
-      [chave]: valor,
-    });
-  }
-
-  function handleChange(e) {
-    setValue(e.target.getAttribute('name'), e.target.value);
-  }
 
   // Função chamada quando quer que algum efeito colateral aconteça quando se usa o componente
   useEffect(() => {
     // console.log('opa');
+    // if para decidir qual servidor acessar, se é localmente ou no heroku
     const URL = window.location.href.includes('localhost') ? 'http://localhost:3001/categorias' : 'https://devflix-afonso.herokuapp.com/categorias';
     fetch(URL)
       .then(async (respostaDoServer) => {
@@ -61,7 +49,7 @@ function CadastroCategoria() {
           values,
         ]);
 
-        setValues(valoresIniciais);
+        clearForm();
       }}
       >
 
@@ -119,8 +107,8 @@ function CadastroCategoria() {
       {/* Exibindo o estado de categoria na tela */}
       <ul>
         {categorias.map((categoria) => (
-          <li key={`${categoria.nome}`}>
-            {categoria.nome}
+          <li key={`${categoria.titulo}`}>
+            {categoria.titulo}
           </li>
         ))}
       </ul>
