@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
@@ -28,6 +28,24 @@ function CadastroCategoria() {
   function handleChange(e) {
     setValue(e.target.getAttribute('name'), e.target.value);
   }
+
+  // Função chamada quando quer que algum efeito colateral aconteça quando se usa o componente
+  useEffect(() => {
+    // console.log('opa');
+    if (window.location.href.includes('localhost')) {
+      const URL = 'http://localhost:3001/categorias';
+      fetch(URL)
+        .then(async (respostaDoServer) => {
+          if (respostaDoServer.ok) {
+            const resposta = await respostaDoServer.json();
+            setCategorias(resposta);
+            return;
+          }
+          throw new Error('Não foi possível pegar os dados');
+        });
+    }
+  }, []);
+
   return (
     <PageDefault>
       <h1>
