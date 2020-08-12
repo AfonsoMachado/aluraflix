@@ -99,7 +99,8 @@ function CadastroCategoria() {
           </label>
         </div> */}
 
-        <Button>
+        {/* TODO CADASTRO DE CATEGORIA */}
+        <Button type="submit">
           Cadastrar
         </Button>
       </form>
