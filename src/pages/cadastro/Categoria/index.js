@@ -105,6 +105,7 @@ function CadastroCategoria() {
         </Button>
       </form>
 
+      {/* TODO Listar categorias */}
       {/* Exibindo o estado de categoria na tela */}
       <ul>
         {categorias.map((categoria) => (

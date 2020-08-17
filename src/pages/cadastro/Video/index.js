@@ -62,7 +62,7 @@ function CadastroVideo() {
           value={values.url}
           onChange={handleChange}
         />
-
+        {/* TODO Trocar input por um select com o nome das categorias */}
         <FormField
           label="Categoria"
           name="categoria"
