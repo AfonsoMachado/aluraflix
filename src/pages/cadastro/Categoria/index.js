@@ -5,6 +5,8 @@ import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
 
+import './index.css';
+
 function CadastroCategoria() {
   const valoresIniciais = {
     nome: '',
@@ -107,13 +109,16 @@ function CadastroCategoria() {
 
       {/* TODO Listar categorias */}
       {/* Exibindo o estado de categoria na tela */}
-      <ul>
-        {categorias.map((categoria) => (
-          <li key={`${categoria.titulo}`}>
-            {categoria.titulo}
-          </li>
-        ))}
-      </ul>
+      <div className="categories">
+        CATEGORIAS CADASTRADAS:
+        <ul id="ul">
+          {categorias.map((categoria) => (
+            <li id="li" key={`${categoria.titulo}`}>
+              {categoria.titulo}
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <Link to="/">
         Ir para home

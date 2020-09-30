@@ -1,0 +1,16 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul#ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+li#li {
+  list-style: none;
+}
