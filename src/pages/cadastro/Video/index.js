@@ -19,36 +19,35 @@ function CadastroVideo() {
 
   // Capturandoi categorias do backend
   useEffect(() => {
-    categoriasRepository.getAll().then((categoriasFromServer) => {
-      setCategorias(categoriasFromServer);
-    });
+    categoriasRepository
+      .getAll()
+      .then((categoriasFromServer) => {
+        setCategorias(categoriasFromServer);
+      });
   }, []);
 
   return (
     <PageDefault>
       <h1>Cadastro de Video</h1>
 
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          // alert('Video Cadastrado com sucesso!!!1!');
+      <form onSubmit={(event) => {
+        event.preventDefault();
+        // alert('Video Cadastrado com sucesso!!!1!');
 
-          const categoriaEscolhida = categorias.find(
-            (categoria) => categoria.titulo === values.categoria
-          );
+        const categoriaEscolhida = categorias
+          .find((categoria) => categoria.titulo === values.categoria);
 
-          videosRepository
-            .create({
-              titulo: values.titulo,
-              url: values.url,
-              categoriaId: categoriaEscolhida.id,
-            })
-            .then(() => {
-              console.log('Cadastrou com sucesso!');
-              // redirecionando após o cadastro
-              history.push('/');
-            });
-        }}
+        videosRepository.create({
+          titulo: values.titulo,
+          url: values.url,
+          categoriaId: categoriaEscolhida.id,
+        })
+          .then(() => {
+            console.log('Cadastrou com sucesso!');
+            // redirecionando após o cadastro
+            history.push('/');
+          });
+      }}
       >
         <FormField
           label="Título do Vídeo"
@@ -72,13 +71,17 @@ function CadastroVideo() {
           suggestions={categoryTitles}
         />
 
-        <Button type="submit">Cadastrar</Button>
+        <Button type="submit">
+          Cadastrar
+        </Button>
       </form>
 
       <br />
       <br />
 
-      <Link to="/cadastro/categoria">Cadastrar Categoria</Link>
+      <Link to="/cadastro/categoria">
+        Cadastrar Categoria
+      </Link>
     </PageDefault>
   );
 }
