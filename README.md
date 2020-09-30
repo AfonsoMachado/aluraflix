@@ -4,7 +4,7 @@
 
 <p align="center">:rocket: Projeto implementado durante o evento Imersão React, organizado pela Alura Cursos Online, com o objetivo de durante uma semana desenvolver um projeto completo aplicando conceitos e ferramentas usados no mercado atualmente.</p>
 
-<p align="center">A Devflix é uma plataforma aonde são catalogados vídeos sobre ferramentas usadas para desenvolvimento.</p>
+<p align="center">O Metalflix é uma plataforma aonde são catalogados vídeos sobre vários estilos diferentes de Metal.</p>
 
 ## :computer: Tecnologias
 <ul>
@@ -18,7 +18,7 @@
 
 Este aplicativo foi hospedado na web para fins educativos e de testes, pode ser acessado online a partir de:
   - Frontend: https://metalflix-am.vercel.app/
-  - Backend: https://devflix-afonso.herokuapp.com/
+  - Backend: https://metalflix-am.herokuapp.com/
   
 ## :fire: Instalando e executando localmente
 
