@@ -12,7 +12,7 @@ import './index.css';
 function CadastroCategoria() {
   const valoresIniciais = {
     nome: '',
-    descricao: '',
+    text: '',
     cor: '',
   };
 
@@ -77,8 +77,8 @@ function CadastroCategoria() {
         <FormField
           label="Descrição"
           type="textarea"
-          name="descricao"
-          value={values.descricao}
+          name="text"
+          value={values.text}
           onChange={handleChange}
         />
         {/* <div>

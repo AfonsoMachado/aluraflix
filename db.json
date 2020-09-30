@@ -33,6 +33,12 @@
       "titulo": "Doom Metal",
       "cor": "#393232",
       "id": 6
+    },
+    {
+      "titulo": "Metal Alternativo",
+      "cor": "#db9e9e",
+      "text": "Músicas de metal alternativo",
+      "id": 7
     }
   ],
   "videos": [
@@ -84,6 +90,12 @@
       "url": "https://www.youtube.com/watch?v=cfI8o_hzaDk",
       "categoriaId": 1,
       "id": 8
+    },
+    {
+      "titulo": "Within Temptation - Mother Earth",
+      "url": "https://www.youtube.com/watch?v=reGlno9aUpw",
+      "categoriaId": 3,
+      "id": 9
     }
   ]
 }
