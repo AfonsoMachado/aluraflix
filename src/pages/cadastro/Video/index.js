@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import useForm from '../../../hooks/useForm';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import videosRepository from '../../../repositories/videos';
 import categoriasRepository from '../../../repositories/categorias';
+import { ButtonWrapper, StyledLink } from './styles';
 
 function CadastroVideo() {
   const history = useHistory();
@@ -36,17 +37,25 @@ function CadastroVideo() {
         const categoriaEscolhida = categorias
           .find((categoria) => categoria.titulo === values.categoria);
 
-        videosRepository.create({
-          titulo: values.titulo,
-          url: values.url,
-          categoriaId: categoriaEscolhida.id,
-        })
-          .then(() => {
-            console.log('Cadastrou com sucesso!');
-            alert('Video Cadastrado com sucesso!!!1!');
-            // redirecionando após o cadastro
-            history.push('/');
-          });
+        if (!categoriaEscolhida) {
+          alert('Escolha uma categoria existente ou cadastre outra diferente!');
+        } else if (values.url.indexOf('https://www.youtube.com/')) {
+          alert('URL inválida!');
+        } else {
+          videosRepository.create({
+            titulo: values.titulo,
+            url: values.url,
+            categoriaId: categoriaEscolhida.id,
+          })
+            .then(() => {
+              alert('Video Cadastrado com sucesso!!!!');
+              // redirecionando após o cadastro
+              history.push('/');
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
       }}
       >
         <FormField
@@ -71,17 +80,20 @@ function CadastroVideo() {
           suggestions={categoryTitles}
         />
 
-        <Button type="submit">
-          Cadastrar
-        </Button>
+        <ButtonWrapper>
+          <Button type="submit">
+            Cadastrar
+          </Button>
+
+          <StyledLink to="/cadastro/categoria">
+            Cadastrar Categoria
+          </StyledLink>
+        </ButtonWrapper>
       </form>
 
       <br />
       <br />
 
-      <Link to="/cadastro/categoria">
-        Cadastrar Categoria
-      </Link>
     </PageDefault>
   );
 }
