@@ -27,7 +27,7 @@ Este aplicativo foi hospedado na web para fins educativos e de testes, pode ser 
 ### Clonando o repositório:
 
 ```
-$ git clone https://github.com/AfonsoMachado/devflix.git
+$ git clone https://github.com/AfonsoMachado/metalflix.git
 ```
 
 ### Executando backend e frontend simultâneamente
@@ -36,7 +36,7 @@ Para facilitar a execução localmente, foi usada a library Concurrently para ex
 
 ```bash
 # Go to server folder
-$ cd devflix
+$ cd metalflix
 
 # Install Dependencies
 $ npm install
