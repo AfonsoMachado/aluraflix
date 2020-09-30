@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/AfonsoMachado/devflix/blob/master/src/assets/img/devflix.png" alt="Logo" width="200"/>   
+   <img src="https://github.com/AfonsoMachado/devflix/blob/master/src/assets/img/Metalflix.png" alt="Logo" width="200"/>   
 </p>
 
 <p align="center">:rocket: Projeto implementado durante o evento Imersão React, organizado pela Alura Cursos Online, com o objetivo de durante uma semana desenvolver um projeto completo aplicando conceitos e ferramentas usados no mercado atualmente.</p>
