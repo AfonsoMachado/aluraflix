@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
+
+import categoriasRepository from '../../../repositories/categorias';
 
 import './index.css';
 
@@ -14,7 +16,9 @@ function CadastroCategoria() {
     cor: '',
   };
 
-  const { handleChange, values, clearForm } = useForm(valoresIniciais);
+  const history = useHistory();
+
+  const { handleChange, values } = useForm(valoresIniciais);
 
   const [categorias, setCategorias] = useState([]);
 
@@ -43,15 +47,22 @@ function CadastroCategoria() {
       </h1>
 
       {/* capturando o submit */}
-      <form onSubmit={function handleSubmit(e) {
-        e.preventDefault();
-        // Adicionando a categoria inserida, junto com as outras categorias ja salvas
-        setCategorias([
-          ...categorias,
-          values,
-        ]);
+      <form onSubmit={(event) => {
+        event.preventDefault();
 
-        clearForm();
+        categoriasRepository
+          .create({
+            titulo: values.nome,
+            cor: values.cor,
+            text: values.text,
+          })
+          .then(() => {
+            console.log('Cadastrou com sucesso!');
+            alert('Categoria cadastrada com sucesso!');
+            history.push('/');
+          });
+
+        setCategorias([...categorias, values]);
       }}
       >
 

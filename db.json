@@ -28,6 +28,11 @@
       "id": 5,
       "titulo": "Death Metal",
       "cor": "red"
+    },
+    {
+      "titulo": "Doom Metal",
+      "cor": "#393232",
+      "id": 6
     }
   ],
   "videos": [
