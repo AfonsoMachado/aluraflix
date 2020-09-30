@@ -72,6 +72,18 @@
       "categoriaId": 5,
       "titulo": "ARCH ENEMY - The Eagle Flies Alone",
       "url": "https://www.youtube.com/watch?v=mjF1rmSV1dM"
+    },
+    {
+      "titulo": "Virgin Black - ...and I Am Suffering",
+      "url": "https://www.youtube.com/watch?v=SCC_qEUJAwc",
+      "categoriaId": 6,
+      "id": 7
+    },
+    {
+      "titulo": "Sonata Arctica - FullMoon",
+      "url": "https://www.youtube.com/watch?v=cfI8o_hzaDk",
+      "categoriaId": 1,
+      "id": 8
     }
   ]
 }
