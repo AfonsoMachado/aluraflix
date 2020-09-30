@@ -25,7 +25,19 @@ function Home() {
 
   return (
     <PageDefault paddingAll={0}>
-      {dadosIniciais.length === 0 && (<div>Loading...</div>)}
+      {dadosIniciais.length === 0 && (
+      <div className="loading">
+        {/* Loading... */}
+        <div className="obj" />
+        <div className="obj" />
+        <div className="obj" />
+        <div className="obj" />
+        <div className="obj" />
+        <div className="obj" />
+        <div className="obj" />
+        <div className="obj" />
+      </div>
+      )}
 
       {/* mostrando todos os dados */}
       {/* {JSON.stringify(dadosIniciais)} */}
@@ -55,28 +67,6 @@ function Home() {
           />
         );
       })}
-
-      {/* <BannerMain
-        videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
-        url={dadosIniciais.categorias[0].videos[0].url}
-        videoDescription="O que"
-      />
-      <Carousel
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[0]}
-      />
-      <Carousel
-        category={dadosIniciais.categorias[1]}
-      />
-      <Carousel
-        category={dadosIniciais.categorias[2]}
-      />
-      <Carousel
-        category={dadosIniciais.categorias[3]}
-      />
-      <Carousel
-        category={dadosIniciais.categorias[4]}
-      /> */}
     </PageDefault>
   );
 }
