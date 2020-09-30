@@ -17,7 +17,7 @@
 ## :cloud: Hospedagem
 
 Este aplicativo foi hospedado na web para fins educativos e de testes, pode ser acessado online a partir de:
-  - Frontend: https://devflix-afonso.vercel.app/
+  - Frontend: https://metalflix-am.vercel.app/
   - Backend: https://devflix-afonso.herokuapp.com/
   
 ## :fire: Instalando e executando localmente
