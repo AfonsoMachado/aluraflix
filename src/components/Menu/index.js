@@ -10,7 +10,7 @@ function Menu() {
     <nav className="Menu">
       {/* Funciona como uma tag a, mas para um spa */}
       <Link to="/">
-        <img className="Logo" src={Logo} alt="Devflix Logo" />
+        <img className="Logo" src={Logo} alt="Metalflix Logo" />
       </Link>
       {/* Button usando srtled-componentes, se comportando como um a */}
       <Button as={Link} className="ButtonLink" to="/cadastro/video">

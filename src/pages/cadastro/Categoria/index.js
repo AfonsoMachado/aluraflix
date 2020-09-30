@@ -26,7 +26,7 @@ function CadastroCategoria() {
   useEffect(() => {
     // console.log('opa');
     // if para decidir qual servidor acessar, se é localmente ou no heroku
-    const URL = window.location.href.includes('localhost') ? 'http://localhost:3001/categorias' : 'https://devflix-afonso.herokuapp.com/categorias';
+    const URL = window.location.href.includes('localhost') ? 'http://localhost:3001/categorias' : 'https://metalflix-am.herokuapp.com/categorias';
     fetch(URL)
       .then(async (respostaDoServer) => {
         if (respostaDoServer.ok) {
