@@ -27,6 +27,7 @@ function CadastroVideo() {
   }, []);
 
   return (
+    // Página de cadastro de video, baseada na PageDefaul
     <PageDefault>
       <h1>Cadastro de Video</h1>
 
