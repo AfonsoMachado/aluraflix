@@ -57,17 +57,16 @@ const Input = styled.input`
   &:focus:not([type='color']) + span {
     transform: scale(0.6) translateY(-10px);
   }
-  ${({ hasValue }) => hasValue
-    && css`
+  ${({ hasValue }) =>
+    hasValue &&
+    css`
       &:not([type='color']) + span {
         transform: scale(0.6) translateY(-10px);
       }
     `}
 `;
 
-function FormField({
-  label, type, name, value, onChange, suggestions,
-}) {
+function FormField({ label, type, name, value, onChange, suggestions }) {
   const fieldId = `id_${name}`;
   const isTypeTextarea = type === 'textarea';
   const tag = isTypeTextarea ? 'textarea' : 'input';
@@ -90,10 +89,7 @@ function FormField({
           autoComplete={hasSuggestions ? 'off' : 'on'}
           list={hasSuggestions ? `suggestionFor_${fieldId}` : undefined}
         />
-        <Label.Text>
-          {label}
-          :
-        </Label.Text>
+        <Label.Text>{label}:</Label.Text>
         {hasSuggestions && (
           <datalist id={`suggestionFor_${fieldId}`}>
             {suggestions.map((suggestion) => (
